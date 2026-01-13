@@ -97,7 +97,7 @@ app.use(globalErrHandler);
 // ################################ PRACTICE END ##############################################
 
 mongoose
-  .connect(process.env.NODE_ENV == development ? process.env.MONGO_URI_DEV : process.env.MONGO_URI_PRO)
+  .connect(process.env.NODE_ENV == "development" ? process.env.MONGO_URI_DEV : process.env.MONGO_URI_PRO)
   .then(() => console.log("connection Successfull"))
   .catch((err) => console.log("connection Failed: ", err));
 
