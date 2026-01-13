@@ -1,5 +1,8 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -10,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:5000'
+        url: process.env.NODE_ENV == "development" ? 'http://localhost:5000' : "https://mentorship-api-1-z23f.onrender.com"
       }
     ],
     components: {

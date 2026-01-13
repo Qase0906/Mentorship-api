@@ -102,6 +102,6 @@ mongoose
   .catch((err) => console.log("connection Failed: ", err));
 
 
-app.listen(PORT, () => {
+app.listen(process.env.NODE_ENV == "development" ? PORT : "https://mentorship-api-1-z23f.onrender.com", () => {
   console.log(`Server is running http://localhost:${PORT}`);
 });
